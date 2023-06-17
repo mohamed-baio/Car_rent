@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Vehicle Availability</title>
+</head>
+<body>
+    <h1>Check Vehicle Availability</h1>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'check_availability' %}">
+        {% csrf_token %}
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+
+        <input type="submit" value="Check Availability">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Booking Report</title>
+</head>
+<body>
+    <h1>Daily Booking Report</h1>
+
+    <table>
+        <tr>
+            <th>Booking ID</th>
+            <th>Customer</th>
+            <th>Vehicle</th>
+            <th>Date of Hire</th>
+            <th>Return Date</th>
+        </tr>
+        {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.customer }}</td>
+            <td>{{ booking.vehicle }}</td>
+            <td>{{ booking.date_of_hire }}</td>
+            <td>{{ booking.return_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
